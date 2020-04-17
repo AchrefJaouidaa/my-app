@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('clean') {
             steps {
-                sh "mvn clean -f my-app"
+                sh "mvn clean"
                 echo 'Building..'
             }
         }
         stage('Test') {
             steps {
-                sh "mvn test -f my-app"
+                sh "mvn test"
                 echo 'Testing..'
             }
         }
         stage('Deploy') {
             steps {
-                sh "mvn package -f my-app"
+                sh "mvn package"
                 echo 'Deploying....'
             }
         }
